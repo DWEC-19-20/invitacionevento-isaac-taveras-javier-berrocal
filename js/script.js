@@ -17,17 +17,130 @@ const buttonEdit=document.getElementsByClassName("edit");
 const divMain=document.getElementsByClassName("main")[0];
 const h2=divMain.firstElementChild;
 const ul=h2.nextElementSibling;
-
-for(let x=0;x<document.getElementsByClassName("confirmed").length;x++){
-
-    document.getElementsByClassName("confirmed")[x].checked;
-
-}
+var u=document.createElement("ul");
+u.setAttribute("id","listadoConfirmados");
+document.getElementById("listaH3").style.color="blue";
 
 
-function filter(){
+      
 
-}
+
+
+//FORMA 1 DE HACER EL LISTADO DE CONFIRMADOS
+/*document.getElementById("confirmados").addEventListener('change', e => {
+    
+    if(e.target.checked){
+        
+     
+            if(document.getElementById("invitedList").querySelectorAll('[type="checkbox"]:checked')){
+                alert("dentro de checkeado");
+                var h3=document.createElement("h3");
+                h3.innerHTML="<u>Listado de confirmados</u>";
+                h3.style.color="blue";
+
+                var checkbox=document.getElementById("invitedList").querySelectorAll('[type="checkbox"]:checked');
+
+                document.getElementById("confirmados").appendChild(u);
+               var p=document.createElement("p");
+               p.innerHTML=elementoAnterior.textContent;
+               lista.appendChild(p);
+               
+               
+
+               
+
+            }
+  
+
+        
+    }
+
+});*/
+
+
+
+//ES ESTA FUNCIÓN PACO
+document.getElementById("confirmados").addEventListener('change', e => {
+
+if(document.getElementById("confirmados").checked==true){
+
+        for(let x=0;x<document.getElementsByClassName("confirmo").length;x++){
+
+            if(document.getElementsByClassName("confirmo")[x].checked){
+            
+            
+        
+            var label=document.getElementsByClassName("confirmo")[x].parentElement;
+            var span=label.previousElementSibling;
+            var contenido=document.createElement("span");
+            contenido.textContent=span.textContent;
+            var content=contenido.textContent;
+            var list=document.getElementById("lista");
+            
+           
+
+            document.getElementById("lista").appendChild(contenido);
+            var br=document.createElement("br");
+            document.getElementById("lista").appendChild(br);
+           
+
+            
+            }
+        
+
+            else{
+
+                var label=document.getElementsByClassName("confirmo")[x].parentElement;
+                var span=label.previousElementSibling;
+                var contenido=document.createElement("span");
+                contenido.innerHTML=span.innerHTML;
+                
+                document.getElementById("lista").remove(getElementsByTagName("span")[x]);
+
+            }
+        }
+        document.getElementById("lista").style.display="block";
+
+    }
+
+    else{
+
+        document.getElementById("lista").style.display="none";
+
+    }
+
+ 
+    
+
+});
+
+
+
+
+//else{
+
+    /*for(let x=0;x<document.getElementsByTagName("p").length;x++){
+
+        if(document.getElementsByClassName("confirmo")[x].checked){
+            
+
+                var p=document.getElementByTagName("p")[x];
+                document.getElementById("lista").removeChild(p);
+    
+            
+    
+            
+        }
+
+    }*/
+    //document.getElementById("lista").style.display="none";    
+
+//}
+
+//});
+
+
+
 
 function removeB(e){
 
@@ -90,9 +203,9 @@ botonInvitacion.addEventListener("click",function(e){
         alert("campo vacío.No se hace nada");
 
     }
-    else if(repetido){
+    /*else if(repetido){
         alert("Repetido");
-    }
+    }*/
     else{
         alert("campo relleno");
 
