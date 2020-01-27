@@ -105,10 +105,28 @@ function editB(e){
 
         e.preventDefault();
         var newName=prompt("Introduce el nuevo nombre que deseas poner: ");
+        if(newName===null){
+            return;
+        }
         var botonE=e.target;
         var padre=botonE.parentElement;
         var primerHijo=padre.firstElementChild;
-        primerHijo.innerHTML=newName;
+        var cont=0;
+
+        for(let r=0;r<document.getElementsByTagName("span").length;r++){
+           
+            if(document.getElementsByTagName("span")[r].textContent==newName){
+                
+                cont++;
+
+            }
+
+            
+        }
+        if(cont==0&&newName!=""){
+            primerHijo.innerHTML=newName;
+        }
+
 }
 
 
