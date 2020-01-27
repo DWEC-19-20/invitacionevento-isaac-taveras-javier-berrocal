@@ -5,7 +5,7 @@
  Cómo Administrador del evento querría poder filtrar los invitados para mostrar solo los que tienen confirmada la asistencia.
  --Cómo Administrador del evento, querría poder eliminar invitados al evento
  --Cómo Administrador del evento me confirme antes de borrar un invitado al evento.
- Cómo Administrador del evento querría que no se pudiera repetir el nombre de un invitado al evento (sin añadir uno vacio)
+ --Cómo Administrador del evento querría que no se pudiera repetir el nombre de un invitado al evento (sin añadir uno vacio)
 
 */
 const divWrapper=document.getElementsByClassName("wrapper");
@@ -22,45 +22,11 @@ u.setAttribute("id","listadoConfirmados");
 document.getElementById("listaH3").style.color="blue";
 
 
-      
 
-
-
-//FORMA 1 DE HACER EL LISTADO DE CONFIRMADOS
-/*document.getElementById("confirmados").addEventListener('change', e => {
-    
-    if(e.target.checked){
-        
-     
-            if(document.getElementById("invitedList").querySelectorAll('[type="checkbox"]:checked')){
-                alert("dentro de checkeado");
-                var h3=document.createElement("h3");
-                h3.innerHTML="<u>Listado de confirmados</u>";
-                h3.style.color="blue";
-
-                var checkbox=document.getElementById("invitedList").querySelectorAll('[type="checkbox"]:checked');
-
-                document.getElementById("confirmados").appendChild(u);
-               var p=document.createElement("p");
-               p.innerHTML=elementoAnterior.textContent;
-               lista.appendChild(p);
-               
-               
-
-               
-
-            }
-  
-
-        
-    }
-
-});*/
-
-
-
-//ES ESTA FUNCIÓN PACO
 document.getElementById("confirmados").addEventListener('change', e => {
+
+    var contenedorLista = document.createElement("div");
+    contenedorLista.setAttribute("id","contenedorLista");
 
 if(document.getElementById("confirmados").checked==true){
 
@@ -79,9 +45,9 @@ if(document.getElementById("confirmados").checked==true){
             
            
 
-            document.getElementById("lista").appendChild(contenido);
+            document.getElementById("contenedorLista").appendChild(contenido);
             var br=document.createElement("br");
-            document.getElementById("lista").appendChild(br);
+            document.getElementById("contenedorLista").appendChild(br);
            
 
             
@@ -95,10 +61,11 @@ if(document.getElementById("confirmados").checked==true){
                 var contenido=document.createElement("span");
                 contenido.innerHTML=span.innerHTML;
                 
-                document.getElementById("lista").remove(getElementsByTagName("span")[x]);
+               
 
             }
         }
+        document.getElementById("lista").appendChild(contenedorLista);
         document.getElementById("lista").style.display="block";
 
     }
@@ -106,6 +73,8 @@ if(document.getElementById("confirmados").checked==true){
     else{
 
         document.getElementById("lista").style.display="none";
+
+        document.getElementById("lista").removeChild(document.getElementById("contenedorLista"));
 
     }
 
@@ -117,27 +86,7 @@ if(document.getElementById("confirmados").checked==true){
 
 
 
-//else{
 
-    /*for(let x=0;x<document.getElementsByTagName("p").length;x++){
-
-        if(document.getElementsByClassName("confirmo")[x].checked){
-            
-
-                var p=document.getElementByTagName("p")[x];
-                document.getElementById("lista").removeChild(p);
-    
-            
-    
-            
-        }
-
-    }*/
-    //document.getElementById("lista").style.display="none";    
-
-//}
-
-//});
 
 
 
@@ -162,25 +111,6 @@ function editB(e){
         primerHijo.innerHTML=newName;
 }
 
-/*function repetido(){
-
-    for(let i=0;i<document.getElementsByName("nombre").length;i++){
-
-        if(document.getElementsByName("name")[0].value==document.getElementsByName("nombre")[i].value){
-
-            //alert("El valor del elemento input: "+document.getElementsByName("name")[0].value+" es igual al valor del elemnto span: "+document.getElementsByName("nombre")[i].value);
-            return true;
-            break;
-
-        }
-        else{
-            return false;
-        }
-
-    }
-
-}*/
-
 
 
 for(let j=0;j<document.getElementsByClassName("remove").length;j++){
@@ -198,14 +128,27 @@ for(let y=0;y<document.getElementsByClassName("edit").length;y++){
 
 
 botonInvitacion.addEventListener("click",function(e){
+
     e.preventDefault();
+
+    for(let z=0;z<document.getElementsByTagName("span").length;z++){
+
+        if(document.getElementsByTagName("span")[z].innerHTML==document.getElementsByName("name")[0].value){
+
+            document.getElementsByName("name")[0].value="";
+            alert("Persona repetida");
+            
+
+        }
+
+    }
     if(inputInvitacion.value==''){
         alert("campo vacío.No se hace nada");
 
     }
-    /*else if(repetido){
-        alert("Repetido");
-    }*/
+
+
+
     else{
         alert("campo relleno");
 
