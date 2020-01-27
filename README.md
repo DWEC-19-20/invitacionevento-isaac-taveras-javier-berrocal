@@ -13,11 +13,17 @@ La estructura básica html y css ya está creada, pero eres libre para modificar
 
 Completa todas las historias utilizando DOM
 
-1) Cómo Administrador del evento, querría añadir nombres a la lista de invitados para saber quien asistirá.
-1) Cómo Administrador del evento, querría poder confirmar invitados al evento para saber quien finalmente irá
-1) Cómo Administrador del evento poder editar el nombre de cada asistente al evento para corregir errores
-1) Cómo Administrador del evento querría poder filtrar los invitados para mostrar solo los que tienen confirmada la asistencia para visualizarlo mejor
-1) Cómo Administrador del evento, querría poder eliminar invitados al evento que se hayan dado de baja
-1) Cómo Administrador del evento me confirme antes de borrar un invitado al evento para evitar cometer un error
-1) Cómo Administrador del evento querría que no se pudiera repetir el nombre de un invitado al evento ni añadir nombres vacios para evitar errores
+1) Cómo Administrador del evento, querría añadir nombres a la lista de invitados para saber quien asistirá.->Javier Berrocal
+
+2) Cómo Administrador del evento, querría poder confirmar invitados al evento para saber quien finalmente irá->Isaac Taveras
+
+3) Cómo Administrador del evento poder editar el nombre de cada asistente al evento para corregir errores->Javier Berrocal
+
+4) Cómo Administrador del evento querría poder filtrar los invitados para mostrar solo los que tienen confirmada la asistencia para visualizarlo mejor->Javier Berrocal
+
+5) Cómo Administrador del evento, querría poder eliminar invitados al evento que se hayan dado de baja->Isaac Taveras
+
+6) Cómo Administrador del evento me confirme antes de borrar un invitado al evento para evitar cometer un error->Isaac Taveras
+
+7) Cómo Administrador del evento querría que no se pudiera repetir el nombre de un invitado al evento ni añadir nombres vacios para evitar errores->Isaac Taveras y Javier Berrocal
 
